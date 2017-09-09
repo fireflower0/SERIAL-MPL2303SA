@@ -8,7 +8,7 @@
 
 (defun main ()
   (let (fd input-data)
-    ;; Serial Open
+    ;; Serial Open. For RaspberryPi3, use "/dev/ttyS0".
     (setf fd (serialOpen "/dev/ttyAMA0" 115200))
     (if (< fd 0)
         (return-from main nil))
@@ -26,5 +26,5 @@
     ;; Serial Close
     (serialClose fd)))
 
-;; 実行！
+;; Executable!!!
 (main)
